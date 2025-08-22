@@ -19,19 +19,7 @@ A responsive, keyboard-friendly **scientific calculator** built with Python and 
 * **Responsive UI:** grid expands with window; buttons stretch (`sticky="nsew"`).
 * **Error handling:** graceful "Error" message without crashing.
 
----
 
-## 🖼 Demo
-
-Add a short screen recording or GIF here once you have it:
-
-```
-/docs/demo.gif
-```
-
-You can capture a GIF using tools like ScreenToGif (Windows), Kap (macOS), or peek (Linux).
-
----
 
 ## 🧰 Tech Stack
 
@@ -118,16 +106,6 @@ The app uses Python’s `eval()` with a **locked-down globals** dict and an expl
 
 ---
 
-## 🗂 Project Structure
-
-```
-scientific-calculator-tk/
-├── calculator.py        # main app (Tkinter UI + evaluation)
-├── README.md            # this file
-└── docs/
-    └── demo.gif         # optional demo recording
-```
-
 ---
 
 ## 🧪 Testing Ideas (optional)
@@ -153,16 +131,6 @@ TESTS = [
 for expr, expected in TESTS:
     assert math.isclose(_preprocess_and_eval(expr), expected, rel_tol=1e-9)
 ```
-
----
-
-## 🗺 Roadmap
-
-* [ ] Degree/radian toggle
-* [ ] Memory keys (MC/MR/M+/M-)
-* [ ] History tape with re-use of past expressions
-* [ ] Theme toggle (light/dark)
-* [ ] Full custom parser (no `eval`)
 
 ---
 
