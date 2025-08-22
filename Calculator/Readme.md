@@ -108,32 +108,6 @@ The app uses Python’s `eval()` with a **locked-down globals** dict and an expl
 
 ---
 
-## 🧪 Testing Ideas (optional)
-
-* Parametric tests for the evaluator (e.g., `"2^3" → 8`, `"√(16)" → 4`)
-* Property tests (commutativity of `+`, `*` where applicable)
-* UI smoke test: launch window, press a few buttons, ensure no exceptions
-
-Example (pytest-style):
-
-```python
-import math
-from calculator import _preprocess_and_eval  # factor this out if you like
-
-TESTS = [
-    ("2+2", 4),
-    ("2^3", 8),
-    ("√(16)", 4),
-    ("sin(π/2)", 1),
-    ("log(100)", 2),
-]
-
-for expr, expected in TESTS:
-    assert math.isclose(_preprocess_and_eval(expr), expected, rel_tol=1e-9)
-```
-
----
-
 ## 📦 License
 
 MIT (or your preferred license). Add a `LICENSE` file.
