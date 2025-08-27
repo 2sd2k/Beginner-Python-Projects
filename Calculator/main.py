@@ -184,8 +184,9 @@ def on_key_press(event):
 # --- UI Setup ---
 root = tk.Tk()
 root.title("Python Calculator")
+root.configure(bg="#2E3440")  # Dark gray background
 
-text_result = tk.Entry(root, font=("Arial", 24), justify="right", bd=8, relief="ridge", state="readonly")
+text_result = tk.Entry(root, font=("Arial", 24), justify="right", bd=8, relief="ridge", state="readonly", bg="#2E3440")
 text_result.grid(row=0, column=0, columnspan=5, pady=10, sticky="nsew")
 
 # Button layout
@@ -208,38 +209,38 @@ for (text, row, col) in buttons:
                         command=clear_field, bg="#f44336", fg="white")
     elif text == "DEL":
         btn = tk.Button(root, text=text, width=5, height=2, font=("Arial", 14),
-                        command=backspace)
+                        command=backspace, bg="#f44336", fg="white")
     elif text == "sin":
         btn = tk.Button(root, text=text, width=5, height=2, font=("Arial", 14),
-                        command=sin_value)
+                        command=sin_value, bg="#505050", fg="white")
     elif text == "cos":
         btn = tk.Button(root, text=text, width=5, height=2, font=("Arial", 14),
-                        command=cos_value)
+                        command=cos_value, bg="#505050", fg="white")
     elif text == "tan":
         btn = tk.Button(root, text=text, width=5, height=2, font=("Arial", 14),
-                        command=tan_value)
+                        command=tan_value, bg="#505050", fg="white")
     elif text == "√":
         btn = tk.Button(root, text=text, width=5, height=2, font=("Arial", 14),
-                        command=sqr_root)
+                        command=sqr_root, bg="#505050", fg="white")
     elif text == "eˣ":
         btn = tk.Button(root, text=text, width=5, height=2, font=("Arial", 14),
-                        command=e_power)
+                        command=e_power, bg="#505050", fg="white")
     elif text == "xʸ":
         btn = tk.Button(root, text=text, width=5, height=2, font=("Arial", 14),
-                        command=x_power)
+                        command=x_power, bg="#505050", fg="white")
     elif text == "log":
         btn = tk.Button(root, text=text, width=5, height=2, font=("Arial", 14),
-                        command=log_value)
+                        command=log_value, bg="#505050", fg="white")
     elif text == "ln":
         btn = tk.Button(root, text=text, width=5, height=2, font=("Arial", 14),
-                        command=natural_log)
+                        command=natural_log, bg="#505050", fg="white")
     elif text == "π":
         btn = tk.Button(root, text=text, width=5, height=2, font=("Arial", 14),
-                        command=pi_value)  
+                        command=pi_value, bg="#505050", fg="white")  
     else:
         btn = tk.Button(root, text=text, width=5, height=2, font=("Arial", 14),
                         command=lambda t=text: add_to_calculation(t))
-    btn.grid(row=row, column=col, padx=5, pady=5)
+    btn.grid(row=row, column=col, padx=10, pady=10)
 
 # --- Make grid cells expand when window resizes ---
 for i in range(7):   # 0–5 rows (entry + 5 button rows)

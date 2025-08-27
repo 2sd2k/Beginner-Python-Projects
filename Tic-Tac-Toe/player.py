@@ -89,3 +89,21 @@ class GeniusComputerPlayer(Player):
                 if sim_score['score'] < best['score']:
                     best = sim_score    # replace best
         return best
+
+class MediumComputerPlayer(Player):
+    def __init__(self, letter):
+        super().__init__(letter)
+
+    def get_move(self, game):
+        # 50% of the time, play like Genius AI (minimax)
+        # 50% of the time, play random
+        if random.random() < 0.5:
+            # Use minimax for strategic move
+            if len(game.available_moves()) == 9:
+                square = random.choice(game.available_moves())
+            else:
+                square = GeniusComputerPlayer(self.letter).minimax(game, self.letter)['position']
+        else:
+            # Play randomly
+            square = random.choice(game.available_moves())
+        return square

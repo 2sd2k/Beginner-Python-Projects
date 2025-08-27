@@ -1,4 +1,4 @@
-from player import HumanPlayer, RandomComputerPlayer, GeniusComputerPlayer
+from player import HumanPlayer, MediumComputerPlayer, RandomComputerPlayer, GeniusComputerPlayer
 import math
 import time
 
@@ -101,18 +101,21 @@ if __name__ == '__main__':
     x_wins = 0
     o_wins = 0
     ties = 0
+    x_player = MediumComputerPlayer('X')
+    o_player = HumanPlayer('O')
+    t = TicTacToe()
+    result = play(t, x_player, o_player, print_game=True)
+    # for _ in range(100):
+    #     x_player = MediumComputerPlayer('X')
+    #     o_player = GeniusComputerPlayer('O')
+    #     t = TicTacToe()
+    #     result = play(t, x_player, o_player, print_game=True)
+    #     if result == 'X':
+    #         x_wins += 1
+    #     elif result == 'O':
+    #         o_wins += 1
+    #     else:
+    #         ties += 1
     
-    for _ in range(100):
-        x_player = RandomComputerPlayer('X')
-        o_player = GeniusComputerPlayer('O')
-        t = TicTacToe()
-        result = play(t, x_player, o_player, print_game=False)
-        if result == 'X':
-            x_wins += 1
-        elif result == 'O':
-            o_wins += 1
-        else:
-            ties += 1
-    
-    print(f'After 100 iterations, we see {x_wins} X wins, {o_wins} O wins, {ties} ties')
+    # print(f'After 100 iterations, we see {x_wins} X wins, {o_wins} O wins, {ties} ties')
 
