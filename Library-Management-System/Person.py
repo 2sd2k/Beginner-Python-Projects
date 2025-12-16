@@ -98,6 +98,7 @@ class Member(Person):
             for i, book in enumerate(self.borrowed_books, 1):
                 print(f"{i}. {book}")  # Uses book's __str__()
             print(f"=" * 40)
+            
 
     def calculate_fine(self, days_overdue):
         fine_rate = 0.50  # $0.50 per day
@@ -122,3 +123,15 @@ class Member(Person):
 
     def __str__(self):
         return f"Member: {self.name} ({self.membership_type}, ID: {self.member_id})"
+
+class Librarian(Person):
+    
+    def __init__(self, name, email, person_id, phone_number, address, employee_id, hire_date, salary, shift):
+        super().__init__(name, email, person_id, phone_number, address)
+        self.employee_id = employee_id
+        self.hire_date = hire_date
+        self.salary = salary
+        self.shift = shift
+    
+    def add_book_to_library(self, library, book):
+        
